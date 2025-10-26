@@ -13,8 +13,12 @@ body {
   min-height: 100vh;
   flex-direction: column;
 
-  /* Propiedades para la imagen de fondo */
-  background-image: linear-gradient(rgba(124, 124, 138, 0.7), rgba(0, 0, 0, 0.7)), url('https://media.istockphoto.com/id/1390835938/vector/studio-interior-with-carbon-fiber-texture-modern-carbon-fiber-textured-black-interior-with.jpg?s=612x612&w=0&k=20&c=kgq6k3A8I9EhsJmk-KTgM57nD-VcTFGu-suNJKvFt0M=');
+  /* Propiedades para la imagen de fondo: mantener la imagen senatic2 visible
+    pero con un overlay oscuro semitransparente para contraste */
+  background-color: #000; /* fallback */
+  /* Gradiente menos opaco para permitir que la imagen sea visible */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.62)), url('img/senatic2.jpg');
+  /* No usar blend-mode fuerte; el gradiente encima es suficiente */
   background-size: cover; /* Hace que la imagen cubra todo el espacio */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -46,12 +50,14 @@ p {
 }
 
 .card {
-  background: rgba(114, 114, 114, 0.5);
+  /* Fondo más oscuro en las tarjetas para mejorar el contraste con el fondo */
+  background: rgba(7, 12, 20, 0.6);
   border-radius: 10px;
   padding: 20px;
   width: 345px;
   min-height: 150px;
-  box-shadow: 0 0 15px rgba(117, 116, 129, 0.4);
+  /* Sombra base con tono azulado para resaltar las tarjetas */
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.12), 0 0 12px rgba(117, 116, 129, 0.16);
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease;
@@ -60,6 +66,14 @@ p {
 .card.visible {
   opacity: 1;
   transform: translateY(0);
+  /* Sombra más pronunciada cuando la tarjeta es visible (resaltada) */
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.30), 0 0 22px rgba(0, 123, 255, 0.12);
+}
+
+/* Efecto hover para enfatizar la tarjeta al pasar el cursor */
+.card:hover {
+  box-shadow: 0 14px 36px rgba(0, 123, 255, 0.34), 0 0 26px rgba(0, 123, 255, 0.10);
+  transform: translateY(-4px);
 }
 
 .buttons {
