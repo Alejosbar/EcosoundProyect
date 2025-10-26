@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+
+  /* Propiedades para la imagen de fondo */
+  background-image: linear-gradient(rgba(124, 124, 138, 0.7), rgba(0, 0, 0, 0.7)), url('https://media.istockphoto.com/id/1390835938/vector/studio-interior-with-carbon-fiber-texture-modern-carbon-fiber-textured-black-interior-with.jpg?s=612x612&w=0&k=20&c=kgq6k3A8I9EhsJmk-KTgM57nD-VcTFGu-suNJKvFt0M=');
+  background-size: cover; /* Hace que la imagen cubra todo el espacio */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  background-attachment: fixed; /* Fija la imagen durante el scroll */
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #e0e0e0;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #d6d6d6;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1500px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.card {
+  background: rgba(114, 114, 114, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  width: 345px;
+  min-height: 150px;
+  box-shadow: 0 0 15px rgba(117, 116, 129, 0.4);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.btn-secondary {
+  background: #444;
+}
+
+.btn-secondary:hover {
+  background: #666;
+}
